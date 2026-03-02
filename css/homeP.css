@@ -126,8 +126,50 @@ body {
 
 .projectIntro {
     width: 100%;
-    margin-top: 400px;
+    margin-top: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    font-size: 45px;
+}
+
+.projectBarWrapper {
+    padding-top: 90px;
+    padding-bottom: 300px;
+    overflow: hidden;
+}
+
+.projectBar {
+    display: flex;
+    gap: 50px;
+    overflow-x: hidden;
+    background: transparent;
+}
+
+.projectBar > div {
+    width: 600px;
+    height: 330px;
+    background: black;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.projectBar > div > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 65px;
+    margin-left: 55px;
+    gap: 20px;
+}
+
+.projectBar > div > div > span:first-of-type {
+    color: white;
+    font-size: 27px;
+}
+
+.projectBar > div > div > span:last-of-type {
+    color: white;
 }

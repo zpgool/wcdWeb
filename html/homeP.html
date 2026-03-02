@@ -10,7 +10,6 @@
       href="https://cdn.jsdelivr.net/gh/fonts-archive/Paperlogy/Paperlogy.css"
       type="text/css"
     />
-
     <style>
       @font-face {
         font-family: "YpairingfontBd";
@@ -30,7 +29,7 @@
   </head>
   <body>
     <div class="backgroundImg">
-        <img src="/img/Home_background.png" alt="" />
+      <img src="/img/Home_background.png" alt="" />
     </div>
     <div class="warrper">
       <div class="LogoBar">
@@ -60,5 +59,40 @@
       >우친동이 기획하고 구현한 <br />
       다양한 프로젝트들을 소개합니다.</span
     >
+    <div class="projectBarWrapper">
+      <div class="projectBar">
+        <div><div><span>프로젝트 1</span><span>설명</span></div></div>
+        <div><div><span>프로젝트 2</span><span>설명</span></div></div>
+        <div><div><span>프로젝트 3</span><span>설명</span></div></div>
+        <div><div><span>프로젝트 4</span><span>설명</span></div></div>
+      </div>
+    </div>
+
+    <script>
+      const bar = document.querySelector('.projectBar');
+      let speed = 3;
+
+      // 카드 복제해서 무한루프 효과
+      const cards = [...bar.children];
+      cards.forEach(card => {
+        const clone = card.cloneNode(true);
+        bar.appendChild(clone);
+      });
+
+      function autoScroll() {
+        bar.scrollLeft += speed;
+
+        if (bar.scrollLeft >= bar.scrollWidth / 2) {
+          bar.scrollLeft = 0;
+        }
+
+        requestAnimationFrame(autoScroll);
+      }
+
+      bar.addEventListener('mouseenter', () => speed = 0);
+      bar.addEventListener('mouseleave', () => speed = 3);
+
+      autoScroll();
+    </script>
   </body>
 </html>
