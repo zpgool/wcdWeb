@@ -1,175 +1,274 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input:focus {
-    border-style: unset;
-    outline: unset;
+  border-style: unset;
+  outline: unset;
 }
 
 a {
-    all: unset;
-    cursor: pointer;
+  all: unset;
+  cursor: pointer;
 }
 
 a:link {
-    text-decoration: none;
-    color: #4B8D1D;
+  text-decoration: none;
+  color: #4b8d1d;
 }
 
 a:visited {
-    text-decoration: none;
-    color: #4B8D1D;
+  text-decoration: none;
+  color: #4b8d1d;
 }
 
 a:active {
-    text-decoration: none;
-    color: #4B8D1D;
+  text-decoration: none;
+  color: #4b8d1d;
 }
 
 a:hover {
-    text-decoration: none;
-    color: #4B8D1D;
+  text-decoration: none;
+  color: #4b8d1d;
 }
 
 html,
 body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Paperlogy', sans-serif;
-    position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Paperlogy", sans-serif;
+  position: relative;
 }
 
-.warrper {
-    padding-top: 40px;
+.wrapper {
+  padding-top: 40px;
 }
 
-.backgroundImg {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -2;
+.main_backgroundImg {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
 }
 
-.backgroundImg > img {
-    width: 100%;
-    display: block;
+.main_backgroundImg > img {
+  width: 100%;
+  display: block;
 }
 
 .LogoBar {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 13px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
 }
 
 .LogoBar > span {
-    font-family: 'YpairingfontBd', sans-serif;
-    font-size: 40px;
-    font-weight: 600;
-    color: #4B8D1D;
+  font-family: "YpairingfontBd", sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: #4b8d1d;
 }
 
 .navBar {
-    width: 100%;
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 46px;
-    font-size: 24px;
-    font-weight: 500;
-    color: #4B8D1D;
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 46px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #4b8d1d;
 }
 
 .mainImg {
-    margin-top: 105px;
-    margin-left: 245px;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start;
+  margin-top: 105px;
+  margin-left: 245px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .mainImg > span {
-    margin-top: 28px;
-    margin-left: 10px;
-    font-size: 27px;
-    color: #4B8D1D;
+  margin-top: 28px;
+  margin-left: 10px;
+  font-size: 27px;
+  color: #4b8d1d;
 }
 
 .applyBtn {
-    width: 300px;
-    height: 80px;
-    margin: 240px auto 0 auto;
-    color: #F0EDDA;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 39px;
-    position: relative;
+  width: 300px;
+  height: 80px;
+  margin: 240px auto 0 auto;
+  color: #f0edda;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 39px;
+  position: relative;
 }
 
 .applyBtn > .blur {
-    width: 300px;
-    height: 80px;
-    background-color: #4B8D1D;
-    filter: blur(20px);
-    border-radius: 40%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
+  width: 300px;
+  height: 80px;
+  background-color: #4b8d1d;
+  filter: blur(20px);
+  border-radius: 40%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .projectIntro {
-    width: 100%;
-    margin-top: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    font-size: 45px;
+  width: 100%;
+  margin-top: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 53px;
 }
 
 .projectBarWrapper {
-    padding-top: 90px;
-    padding-bottom: 300px;
-    overflow: hidden;
+  padding-top: 90px;
+  padding-bottom: 150px;
+  overflow: hidden;
 }
 
 .projectBar {
-    display: flex;
-    gap: 50px;
-    overflow-x: hidden;
-    background: transparent;
+  display: flex;
+  gap: 50px;
+  overflow-x: hidden;
+  background: transparent;
 }
 
 .projectBar > div {
-    width: 600px;
-    height: 330px;
-    background: black;
-    border-radius: 20px;
-    flex-shrink: 0;
+  width: 600px;
+  height: 330px;
+  background: black;
+  border-radius: 20px;
+  flex-shrink: 0;
 }
 
 .projectBar > div > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 65px;
-    margin-left: 55px;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 65px;
+  margin-left: 55px;
+  gap: 20px;
 }
 
 .projectBar > div > div > span:first-of-type {
-    color: white;
-    font-size: 27px;
+  color: white;
+  font-size: 27px;
 }
 
 .projectBar > div > div > span:last-of-type {
-    color: white;
+  color: white;
+}
+
+.middle_section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.middle_section > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  z-index: -1;
+}
+
+.middle_section > span {
+  font-size: 53px;
+}
+
+.middle_section > span:first-of-type {
+  margin-top: 270px;
+}
+
+.snapshot_wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 300px;
+}
+
+.snapshot_wrapper > .snapshot {
+  margin-top: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+}
+
+.snapshot_wrapper > .snapshot > .box {
+  background: black;
+  border-radius: 35px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.snapshot_wrapper > .snapshot > .box.active {
+  width: 850px;
+  height: 550px;
+  opacity: 1;
+}
+
+.snapshot_wrapper > .snapshot > .box.prev,
+.snapshot_wrapper > .snapshot > .box.next {
+  width: 700px;
+  height: 400px;
+  opacity: 0.5;
+}
+
+.snapshot_wrapper > .snapshot > .box.prev {
+  border-radius: 0 35px 35px 0;
+  margin-left: -350px;
+}
+
+.snapshot_wrapper > .snapshot > .box.next {
+  border-radius: 35px 0 0 35px;
+  margin-right: -350px;
+}
+
+.middle_section > span:last-of-type {
+  margin-bottom: 100px;
+}
+
+.tell_box {
+  display: flex;
+  width: 1430px;
+  height: auto;
+  gap: 40px;
+  row-gap: 70px;
+  flex-wrap: wrap;
+}
+
+.tell_box > .box {
+  width: 450px;
+  height: 270px;
+  background: white;
+  border-radius: 30px 30px 30px 3px;
+  border: 1px solid black;
+}
+
+.easterEgg_Img1 {
+  margin-top: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

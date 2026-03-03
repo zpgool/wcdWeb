@@ -28,10 +28,10 @@
     </style>
   </head>
   <body>
-    <div class="backgroundImg">
+    <div class="main_backgroundImg">
       <img src="/img/Home_background.png" alt="" />
     </div>
-    <div class="warrper">
+    <div class="wrapper">
       <div class="LogoBar">
         <img src="/img/Logo.png" alt="" />
         <span>WCD</span>
@@ -61,20 +61,54 @@
     >
     <div class="projectBarWrapper">
       <div class="projectBar">
-        <div><div><span>프로젝트 1</span><span>설명</span></div></div>
-        <div><div><span>프로젝트 2</span><span>설명</span></div></div>
-        <div><div><span>프로젝트 3</span><span>설명</span></div></div>
-        <div><div><span>프로젝트 4</span><span>설명</span></div></div>
+        <div>
+          <div><span>프로젝트 1</span><span>설명</span></div>
+        </div>
+        <div>
+          <div><span>프로젝트 2</span><span>설명</span></div>
+        </div>
+        <div>
+          <div><span>프로젝트 3</span><span>설명</span></div>
+        </div>
+        <div>
+          <div><span>프로젝트 4</span><span>설명</span></div>
+        </div>
       </div>
     </div>
 
+    <div class="middle_section">
+      <img src="/img/sectionBackground.png" alt="" />
+      <span>우친동 활동 스냅샷</span>
+      <div class="snapshot_wrapper">
+        <div class="snapshot">
+          <div class="box prev"></div>
+          <div class="box active"></div>
+          <div class="box next"></div>
+        </div>
+      </div>
+
+      <span>4기 선배들이 전하는 우친동</span>
+      <div class="tell_box">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+
+    
+
+    <div class="easterEgg_Img1">
+      <img src="/img/easterEgg_Img1.png" alt="" />
+    </div>
     <script>
-      const bar = document.querySelector('.projectBar');
+      const bar = document.querySelector(".projectBar");
       let speed = 3;
 
       // 카드 복제해서 무한루프 효과
       const cards = [...bar.children];
-      cards.forEach(card => {
+      cards.forEach((card) => {
         const clone = card.cloneNode(true);
         bar.appendChild(clone);
       });
@@ -89,10 +123,43 @@
         requestAnimationFrame(autoScroll);
       }
 
-      bar.addEventListener('mouseenter', () => speed = 0);
-      bar.addEventListener('mouseleave', () => speed = 3);
+      bar.addEventListener("mouseenter", () => (speed = 0));
+      bar.addEventListener("mouseleave", () => (speed = 3));
 
       autoScroll();
+
+      const boxes = document.querySelectorAll(".snapshot .box");
+      // 카드 데이터 (총 4개 기준)
+      let currentIndex = 1; // 실제 카드 배열에서의 현재 인덱스
+      const totalCards = 4;
+
+      // 카드 배경색 예시 (나중에 이미지로 교체)
+      const colors = ["#1a1a2e", "#16213e", "#0f3460", "#533483"];
+
+      function updateSnapshot(centerIndex) {
+        const prevIndex = (centerIndex - 1 + totalCards) % totalCards;
+        const nextIndex = (centerIndex + 1) % totalCards;
+
+        boxes[0].style.background = colors[prevIndex];
+        boxes[1].style.background = colors[centerIndex];
+        boxes[2].style.background = colors[nextIndex];
+
+        currentIndex = centerIndex;
+      }
+
+      // 왼쪽 클릭 → 이전 카드가 가운데로
+      boxes[0].addEventListener("click", () => {
+        const newCenter = (currentIndex - 1 + totalCards) % totalCards;
+        updateSnapshot(newCenter);
+      });
+
+      // 오른쪽 클릭 → 다음 카드가 가운데로
+      boxes[2].addEventListener("click", () => {
+        const newCenter = (currentIndex + 1) % totalCards;
+        updateSnapshot(newCenter);
+      });
+
+      updateSnapshot(currentIndex);
     </script>
   </body>
 </html>
