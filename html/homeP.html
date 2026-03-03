@@ -152,9 +152,30 @@
       </div>
     </div>
 
+    <footer>
+      <div class="footer_wrapper">
+        <div class="box1">
+          <img src="/img/logo2.png" alt="">
+          <div class="dropdown_bar">
+            <span class="first_span">Pages</span>
+            <div class="dropdown_bar menu">
+              <span>HOME</span>
+              <span>ABOUT US</span>
+              <span>Q&A</span>
+            </div>
+          </div>
+        </div>
+        <div class="dropdown_bar box2">
+          <span class="first_span">social</span>
+          <span>Instagram</span>
+        </div>
+      </div>
+      <span>© 2026 우친동. All rights reserved.</span>
+    </footer>
+
     <script>
       const bar = document.querySelector(".projectBar");
-      let speed = 3;
+      let speed = 5;
 
       // 카드 복제해서 무한루프 효과
       const cards = [...bar.children];
@@ -174,7 +195,7 @@
       }
 
       bar.addEventListener("mouseenter", () => (speed = 0));
-      bar.addEventListener("mouseleave", () => (speed = 3));
+      bar.addEventListener("mouseleave", () => (speed = 5));
 
       autoScroll();
 
