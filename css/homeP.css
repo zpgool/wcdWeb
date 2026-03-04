@@ -365,12 +365,12 @@ body {
   gap: clamp(6px, 0.7vw, 10px);
 }
 
-.member_introduce > .member_name > .name {
+.member_introduce > .member_name > span:first-of-type {
   font-size: clamp(15px, 1.4vw, 20px);
   font-weight: 500;
 }
 
-.member_introduce > .member_name > .rank {
+.member_introduce > .member_name > span:last-of-type {
   font-size: clamp(11px, 1vw, 14px);
   opacity: 60%;
 }
@@ -447,7 +447,7 @@ body {
 
 /* ===== FAQ Section ===== */
 .FaQ_section {
-  width: 100vw;
+  width: 100%;
   height: auto;
   min-height: clamp(500px, 76vw, 1100px);
   background: black;
@@ -527,7 +527,7 @@ body {
 
 /* ===== Apply Section ===== */
 .apply_section {
-  width: 100vw;
+  width: 100%;
   height: clamp(360px, 44.5vw, 640px);
   display: flex;
   flex-direction: column;
