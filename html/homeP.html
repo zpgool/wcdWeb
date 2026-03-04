@@ -209,7 +209,6 @@
             >
           </div>
         </div>
-        
       </div>
     </div>
 
@@ -319,8 +318,11 @@
     </footer>
 
     <script>
+      // ===== 프로젝트 바 자동 스크롤 (시간 기반 - 주사율 무관) =====
       const bar = document.querySelector(".projectBar");
-      let speed = 3;
+      const pixelsPerSecond = 300;
+      let isPaused = false;
+      let lastTime = null;
 
       const cards = [...bar.children];
       cards.forEach((card) => {
@@ -328,19 +330,27 @@
         bar.appendChild(clone);
       });
 
-      function autoScroll() {
-        bar.scrollLeft += speed;
-        if (bar.scrollLeft >= bar.scrollWidth / 2) {
-          bar.scrollLeft = 0;
+      function autoScroll(timestamp) {
+        if (!lastTime) lastTime = timestamp;
+        const delta = timestamp - lastTime;
+        lastTime = timestamp;
+
+        if (!isPaused) {
+          bar.scrollLeft += (pixelsPerSecond * delta) / 1000;
+          if (bar.scrollLeft >= bar.scrollWidth / 2) {
+            bar.scrollLeft = 0;
+          }
         }
+
         requestAnimationFrame(autoScroll);
       }
 
-      bar.addEventListener("mouseenter", () => (speed = 0));
-      bar.addEventListener("mouseleave", () => (speed = 3));
+      bar.addEventListener("mouseenter", () => (isPaused = true));
+      bar.addEventListener("mouseleave", () => (isPaused = false));
 
-      autoScroll();
+      requestAnimationFrame(autoScroll);
 
+      // ===== 스냅샷 슬라이더 =====
       const boxes = document.querySelectorAll(".snapshot .box");
       let currentIndex = 1;
       const totalCards = 4;
@@ -380,6 +390,7 @@
 
       updateSnapshot(currentIndex);
 
+      // ===== FAQ 토글 =====
       const faqBoxes = document.querySelectorAll(".FaQ_section .box");
       faqBoxes.forEach((box) => {
         box.addEventListener("click", () => {
